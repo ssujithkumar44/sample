@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        bat 'set M2_HOME=D:\\L1\\apache-maven-3.3.9-bin\\apache-maven-3.3.9'
         bat 'mvn -DskipTests clean package'
+        bat 'set path=D:\\L1\\apache-maven-3.3.9-bin\\apache-maven-3.3.9\\bin:%path%'
       }
     }
     stage('Testing') {
